@@ -50,6 +50,20 @@ export const CardLayout = () => {
         }
     }
 
+    const handleRangeChange = (e) => {
+        const start = e.target.value.split('-')[0];
+        const end = e.target.value.split('-')[1];
+
+        console.log(start, end);
+    }
+
+    const handleRatingChange = (e) => {
+        const start = e.target.value.split('-')[0];
+        const end = e.target.value.split('-')[1];
+
+        console.log(start, end);
+    }
+
     React.useEffect(() => {
         getAllProducts()
             .then(res => {
@@ -82,15 +96,15 @@ export const CardLayout = () => {
                 <div className='filter_input'>
                     <form className='select__range'>
                         <div className='range__checkbox'>
-                            <input type="checkbox" id='checkbox1' name="checkbox1" value="$10-$100" />
+                            <input type="checkbox" onChange={handleRangeChange} id='checkbox1' name="checkbox1" value="10-100" />
                             <label for="checkbox1">$10 - $100</label>
                         </div>
                         <div className='range__checkbox'>
-                            <input type="checkbox" id='checkbox2' name="checkbox2" value="$100-$500" />
+                            <input type="checkbox" onChange={handleRangeChange} id='checkbox2' name="checkbox2" value="100-500" />
                             <label for="checkbox2">$100 - $500</label>
                         </div>
                         <div className='range__checkbox'>
-                            <input type="checkbox" id='checkbox3' name="checkbox1" value="$500-$1000" />
+                            <input type="checkbox" onChange={handleRangeChange} id='checkbox3' name="checkbox1" value="500-1000" />
                             <label for="checkbox3">$500 - $1,000</label>
                         </div>
                     </form>
