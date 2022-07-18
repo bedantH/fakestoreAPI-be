@@ -19,4 +19,29 @@
             margin: auto;
         }
     }
+
+    .filter_input{
+        .select__range{
+            display: flex;
+            align-items: center;
+
+            .range__checkbox{
+                margin-right: 2rem;
+                display: flex;
+                align-items: baseline;
+
+                label{
+                    text-align: center;
+                    font-size: 1.4rem;
+                    margin-left: 1rem;
+                    
+                    span{
+                        margin-top: -1rem;
+                        font-size: 1rem;
+                        color: #ffd102;
+                    }
+                }
+            }
+        }
+    }
 }

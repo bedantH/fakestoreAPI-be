@@ -140,6 +140,37 @@ input[type=number] {
   }
 }
 
+.cardLayout__wrapper .filter_input .select__range {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cardLayout__wrapper .filter_input .select__range .range__checkbox {
+  margin-right: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.cardLayout__wrapper .filter_input .select__range .range__checkbox label {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-left: 1rem;
+}
+
+.cardLayout__wrapper .filter_input .select__range .range__checkbox label span {
+  margin-top: -1rem;
+  font-size: 1rem;
+  color: #ffd102;
+}
+
 .pdp_layout__main {
   width: 100vw;
   height: 100vh;

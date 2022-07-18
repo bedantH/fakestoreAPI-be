@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Card } from '../components/Card';
-import axios from 'axios';
 import { getAllCategory, getAllProducts } from '../service/product';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 export const CardLayout = () => {
     const [products, setProducts] = useState([]);
@@ -13,7 +14,6 @@ export const CardLayout = () => {
     const [isSearching, setSearchState] = useState(false);
 
     // memory buffer
-    const [recentPastData, setPastData] = useState([]);
 
     const handleSearch = () => {
         if (search !== "") {
@@ -78,7 +78,51 @@ export const CardLayout = () => {
                             })
                         }
                     </select>
+                </div>
+                <div className='filter_input'>
+                    <form className='select__range'>
+                        <div className='range__checkbox'>
+                            <input type="checkbox" id='checkbox1' name="checkbox1" value="$10-$100" />
+                            <label for="checkbox1">$10 - $100</label>
+                        </div>
+                        <div className='range__checkbox'>
+                            <input type="checkbox" id='checkbox2' name="checkbox2" value="$100-$500" />
+                            <label for="checkbox2">$100 - $500</label>
+                        </div>
+                        <div className='range__checkbox'>
+                            <input type="checkbox" id='checkbox3' name="checkbox1" value="$500-$1000" />
+                            <label for="checkbox3">$500 - $1,000</label>
+                        </div>
+                    </form>
+                </div>
 
+                <div className='filter_input'>
+                    <form className='select__range'>
+                        <div className='range__checkbox'>
+                            <input type="checkbox" id='checkbox1' name="checkbox1" value="4-5" />
+                            <label for="checkbox1"><span>
+                            <FontAwesomeIcon icon={faStar} />
+                            </span> 4 & above</label>
+                        </div>
+                        <div className='range__checkbox'>
+                            <input type="checkbox" id='checkbox2' name="checkbox2" value="3-5" />
+                            <label for="checkbox2"><span>
+                            <FontAwesomeIcon icon={faStar} />
+                            </span> 3 & above</label>
+                        </div>
+                        <div className='range__checkbox'>
+                            <input type="checkbox" id='checkbox3' name="checkbox1" value="2-5" />
+                            <label for="checkbox3"><span>
+                            <FontAwesomeIcon icon={faStar} />
+                            </span> 2 & above</label>
+                        </div>
+                        <div className='range__checkbox'>
+                            <input type="checkbox" id='checkbox3' name="checkbox1" value="2-5" />
+                            <label for="checkbox3"><span>
+                            <FontAwesomeIcon icon={faStar} />
+                            </span> 1 & above</label>
+                        </div>
+                    </form>
                 </div>
             </section>
             <ul className='wrapper__cardList'>
@@ -93,3 +137,19 @@ export const CardLayout = () => {
         </section>
     )
 }
+
+
+/*
+        <Select
+          labelId="demo-multiple-checkbox-label"
+          id="demo-multiple-checkbox"
+          multiple
+          renderValue={(selected) => selected.join(', ')}
+        >
+            <MenuItem key={name} value={name}>
+              <Checkbox checked={personName.indexOf(name) > -1} />
+              <ListItemText primary={name} />
+            </MenuItem>
+        </Select>
+
+*/
